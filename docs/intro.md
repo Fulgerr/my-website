@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **UiPath in less than 5 minutes**.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new
 - [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-## Generate a new site
+## Generate a new sitesss
 
 Generate a new Docusaurus site using the **classic template**.
 
