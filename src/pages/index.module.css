@@ -4,15 +4,26 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 1rem 0;
+  padding-left: 4rem;
+  text-align: left;
   position: relative;
   overflow: hidden;
-}
+  background-image: url('/img/grid.png'); /* Path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  /* You might want to remove or adjust the background-color property */
+  /* background-color: var(--ifm-color-primary); */
+  color: var(--ifm-font-color-base); /* Ensure text is readable */
+} /* This closing brace was in the wrong place before */
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem;
+    text-align: left; /* You had this here, it will only apply on smaller screens */
+    position: relative;
+    overflow: hidden;
+    /* The background image styles are now outside this block */
   }
 }
 
@@ -20,4 +31,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons > * { /* This targets all direct children of the .buttons container */
+  margin-left: 0.5rem; /* Adds spacing to the left of each button */
+  margin-right: 0.5rem; /* Adds spacing to the right of each button */
+}
+
+.buttons > *:first-child { /* This targets only the first button */
+  margin-left: 0; /* Removes the left margin from the first button */
+}
+.homepageButtonsContainer {
+  display: flex;
+  justify-content: flex-start; /* This will horizontally center the content */
+  padding: 4rem 0; /* Add some vertical padding for better visual separation */
+  padding-left: 4rem !important; /* Override potential left padding */
 }

@@ -10,20 +10,20 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Data Service',
+  tagline: 'No code data modelling',
+  favicon: 'img/fav.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://fulgerr.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/my-website/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'UiPath', // Usually your GitHub org/user name.
+  projectName: 'Data Service GitHub POC', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -40,28 +40,21 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
+      ({ docs: { // Keep the original docs configuration
+          sidebarPath: require.resolve('./sidebars.js'),
+		  editUrl: 'https://github.com/Fulgerr/my-website/tree/master',
+		  		includeCurrentVersion: false,
+				lastVersion: '2025.10',
+				     versions: {
+          '2024.10': {
+            label: '2024.10',
+            path: '2024.10', // The path segment for this version
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          '2025.10': {
+            label: '2025.10', // You can label it as latest if you want
+            path: '2025.10', // The path segment for this version
+          },
+        },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -73,38 +66,56 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'My Site',
+navbar: {
+        title: 'Documentation',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'UiPath',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            label: 'Delivery Options',
             position: 'right',
+            type: 'dropdown',
+            items: [
+              {
+                label: 'Automation Cloud',
+                to: '/release-notes',
+              },
+              {
+                label: 'Automation Suite',
+                to: '/release-notes/versions',
+              },
+            ],
           },
+		
+          {
+          type: 'docsVersionDropdown',
+          position: 'right',
+
+          dropdownActiveClassDisabled: true,
+		  dropdownItems: ({ activeVersion, versions }) => {
+          return versions
+            .filter((version) => version.name !== 'current') // Exclude 'Next'
+            .map((version) => ({
+              label: version.label,
+              to: version.path,
+              active: version.name === activeVersion,
+            }));
+		   },
+        },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Support',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Support and Services',
+                to: '/docs/2025.10/intro',
               },
             ],
           },
@@ -112,16 +123,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
+                label: 'UiPath Forum',
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: 'Discord',
+                label: 'UiPath Academy',
                 href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
               },
             ],
           },
@@ -129,7 +136,7 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
+                label: 'UiPath Blog',
                 to: '/blog',
               },
               {
@@ -139,13 +146,46 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Data Service GitHub POC, Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
-};
 
+plugins: [
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'release-notes', // ID of the docs instance
+      path: 'release-notes', // Path to the docs content directory
+      routeBasePath: 'release-notes', // URL route for this docs project
+      sidebarPath: require.resolve('./sidebarsRN.js'), // Path to the sidebar configuration for this project
+      // ... other docs plugin options specific to Project A
+    },
+  ],
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'user-guide',
+      path: 'user-guide',
+      routeBasePath: 'user-guide',
+      sidebarPath: require.resolve('./sidebarsUG.js'),
+      // ... other docs plugin options specific to Project B
+    },
+  ],
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'api-guide',
+      path: 'api-guide',
+      routeBasePath: 'api-guide',
+      sidebarPath: require.resolve('./sidebarsAG.js'),
+      // ... other docs plugin options specific to Project C
+    },
+  ],
+  // ... other plugins (like the blog plugin if you kept it)
+],
+};
 export default config;
