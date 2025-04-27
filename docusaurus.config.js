@@ -136,10 +136,6 @@ navbar: {
             title: 'More',
             items: [
               {
-                label: 'UiPath Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
               },
