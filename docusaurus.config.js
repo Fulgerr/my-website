@@ -81,11 +81,11 @@ navbar: {
             items: [
               {
                 label: 'Automation Cloud',
-                to: '/release-notes',
+                to: '/api-guide/category/data-service-openapi',
               },
               {
                 label: 'Automation Suite',
-                to: '/release-notes/versions',
+                to: '/api-guide/category/data-service-openapi',
               },
             ],
           },
@@ -115,7 +115,7 @@ navbar: {
             items: [
               {
                 label: 'Support and Services',
-                to: '/docs/2025.10/intro',
+                to: '/api-guide/category/data-service-openapi',
               },
             ],
           },
