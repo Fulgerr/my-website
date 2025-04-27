@@ -22,9 +22,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'UiPath', // Usually your GitHub org/user name.
-  projectName: 'Data Service GitHub POC', // Usually your repo name.
-
+  organizationName: 'Fulgerr', // Usually your GitHub org/user name.
+  projectName: 'my-website', // Usually your repo name.
+deploymentBranch: 'gh-pages',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
