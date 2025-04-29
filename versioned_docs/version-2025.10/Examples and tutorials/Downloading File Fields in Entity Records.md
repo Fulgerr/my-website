@@ -9,7 +9,7 @@ Download example
 ## Prerequisite: Create Entities in Data Service
 
 Following the steps detailed on the Creating an Entity page, we created an entity for storing information about the Olympic games.
-
+da are mere
 The Olympics entity has the following fields: Name (text) and Logo (file).
 
 Check out the following pages:
