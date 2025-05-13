@@ -42,6 +42,13 @@ function HomepageButtons() {
         >
           API Guide
         </Link>
+        <Link
+          className="button button--secondary button--lg"
+          to="/assistant/category/about-uipath-assistant"
+        >
+          Assistant
+        </Link>
+
       </div>
     </div>
   );

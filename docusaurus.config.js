@@ -5,6 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+const remarkProductName = require('./src/plugins/remark-product-name.js'); // <--- Add this line here
+
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -148,7 +150,8 @@ navbar: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-    }),
+    }),  
+
 
 plugins: [
   [
@@ -158,7 +161,9 @@ plugins: [
       path: 'release-notes', // Path to the docs content directory
       routeBasePath: 'release-notes', // URL route for this docs project
       sidebarPath: require.resolve('./sidebarsRN.js'), // Path to the sidebar configuration for this project
-      // ... other docs plugin options specific to Project A
+      remarkPlugins: [ // Add remarkPlugins here as well
+          [remarkProductName, { productName: 'release notes' }],
+        ],// ... other docs plugin options specific to Project A
     },
   ],
   [
@@ -168,7 +173,9 @@ plugins: [
       path: 'user-guide',
       routeBasePath: 'user-guide',
       sidebarPath: require.resolve('./sidebarsUG.js'),
-      // ... other docs plugin options specific to Project B
+      remarkPlugins: [ // Add remarkPlugins here as well
+          [remarkProductName, { productName: 'data service' }],
+        ],// ... other docs plugin options specific to Project B
     },
   ],
   [
@@ -178,10 +185,25 @@ plugins: [
       path: 'api-guide',
       routeBasePath: 'api-guide',
       sidebarPath: require.resolve('./sidebarsAG.js'),
-      // ... other docs plugin options specific to Project C
+      remarkPlugins: [ // Add remarkPlugins here as well
+          [remarkProductName, { productName: 'api guide' }],
+        ],// ... other docs plugin options specific to Project C
     },
   ],
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'assistant',
+      path: 'assistant',
+      routeBasePath: 'assistant',
+      sidebarPath: require.resolve('./sidebarsAssistantUG.js'),
+      remarkPlugins: [ // Add remarkPlugins here as well
+          [remarkProductName, { productName: 'Assistant lalalalalalal' }],
+        ],// ... other docs plugin options specific to Project D
+    },
+  ], 
+]
   // ... other plugins (like the blog plugin if you kept it)
-],
+
 };
 export default config;
