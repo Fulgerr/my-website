@@ -29,15 +29,15 @@ UiPath® Data Service provides a business yet user-friendly service where you ca
 
 Below is a list of some common use cases for Data Service:
 
-Capturing data about employee
-                needsSay you create a new process for capturing data about employees
+Capturing data about employee needs
+Say you create a new process for capturing data about employees
                 needs (i.e. desks, chairs, webcams, etc.).Problem: The data can be
                 extensive and must be stored before creating requests in the procurement
                     system.Solution: Instead of using a database, a file share, or
                 cloud storages, you can store them in UiPath® Data Service.
 
-Monthly financial
-                reportingProcesses for monthly financial reporting get data from multiple
+Monthly financial reporting 
+Processes for monthly financial reporting get data from multiple
                 systems like bookings, invoices, billings, and payments.Problem: Both
                 attended and unattended workflows retrieve this data every time they run. This
                 requires all users to have access and connectivity to all the backend systems, which
@@ -48,16 +48,16 @@ Monthly financial
                 need for storing the aggregated critical business data in files on user or robot
                 machines.
 
-An orchestration process using
-                queuesSay you design an orchestration process that includes human-robot
+An orchestration process using queues
+                Say you design an orchestration process that includes human-robot
                 interaction for payments of supplier invoices and transfers all the data via
                 queues.Solution: You can store the invoices in Data Service, pass
                 around the record ID via queues, and work with one version of the truth. You can
                 also create new processes to provide full visibility on all invoices in your system
                 from Data Service.
 
-Review customers before inputting
-                them in CRMSay you are working on an unattended business process to
+Review customers before inputting them in CRM 
+Say you are working on an unattended business process to
                 create a 360-degree view of your customers before you write it in your customer
                 relationship management (CRM) system.Problem: The workflows
                 have tens, maybe hundreds of variables.Solution: You can model your
@@ -90,9 +90,9 @@ To start using the Data Service in Automation Suite you first need to install
 To use the Entities in UiPath Studio, the following requirements need to be met:
 
 * Same version UiPath Studio or higher,
-                Enterprise or Community edition;
+                Enterprise or Community edition.
 * UiPath Assistant or Robot connected
                 to a Modern folder; See the corresponding Orchestrator instructions on how to
                     connect the Robot.
-* Data Service enabled for your tenant .
+* Data Service enabled for your tenant.
 
