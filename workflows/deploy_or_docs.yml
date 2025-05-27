@@ -1,0 +1,33 @@
+name: Deploy Orchestrator Docs
+
+on:
+  push:
+    branches:
+      - 2024.10-orchestrator # Or the branch where your documentation source lives
+    paths:
+      - 'orchestrator_top_level_versioning\release_status**' # Trigger only when changes occur in the 'docs' folder
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and dependencies
+        run: |
+          pip install mkdocs mkdocs-material # Or other dependencies for your generator
+
+      - name: Build documentation
+        run: mkdocs build --clean # This builds your site into the 'site' directory by default
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4 # A popular action for deploying to gh-pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site # The directory where your static site generator outputs files
