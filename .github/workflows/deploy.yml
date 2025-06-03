@@ -1,57 +1,45 @@
-# .github/workflows/deploy.yml
-name: Deploy Docusaurus Site to GitHub Pages
+# .github/workflows/deploy.yml (or your chosen filename)
+name: Deploy Docusaurus Site to Test Branch via Actions
 
 on:
   push:
     branches:
-      - main # Or 'master', or your primary source branch
-  pull_request:
-    branches:
-      - main # Or 'master'
-    # Optionally configure to only run on merged PRs, or use a different trigger
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+      - master # Or 'main', or whichever branch you want to test from
+  workflow_dispatch: # Allows manual triggering
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write # peaceiris/actions-gh-pages needs write permission to push to a branch
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy-to-test-branch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Not always necessary, but good for versioning
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Specify your project's Node.js version
+          node-version: '18' # Or your project's Node.js version
           cache: 'npm' # Or 'yarn', 'pnpm'
 
       - name: Install dependencies
-        run: npm ci # Or yarn install --frozen-lockfile, or pnpm install --frozen-lockfile
+        run: npm ci # Or yarn install --frozen-lockfile, pnpm i --frozen-lockfile
 
-      - name: Build
+      - name: Build Docusaurus site
         run: npm run build
+        # Your Docusaurus build command will output to the './build' directory by default
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        # This action is optional if you are not using a custom domain with GitHub Pages
-        # or if your Docusaurus base URL is already correctly set for the deployment environment.
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to test branch (e.g., gh-pages-preview)
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # Upload entire repository
-          path: './build'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Directory containing the Docusaurus build output
+          publish_branch: gh-pages-preview # Name of the new branch to push to
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: "Deploy to gh-pages-preview from workflow" # Custom commit message
+          # force_orphan: true # Optional: creates a fresh branch without history each time
+          # cname: your-custom-domain.com # Only if you use a custom domain and want it for this preview
