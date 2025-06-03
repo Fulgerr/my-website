@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-This is an introduction for the unexperienced.
+This is an introduction for the beautifully unexperienced.
 
 
 ## Overview
