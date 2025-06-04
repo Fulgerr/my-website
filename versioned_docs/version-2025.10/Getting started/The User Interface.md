@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# The User Interface - for dummies
+# The User Interface - for really bright dummies
 
 The Data Service option is available in your UiPath organization as a tenant-level service that must be enabled. Please check the Enabling the Data Service page for step by step details. Once the service enabled, the Data Service icon  appears on the left navigation bar.
 
