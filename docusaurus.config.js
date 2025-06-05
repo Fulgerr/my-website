@@ -17,10 +17,10 @@ const config = {
   favicon: 'img/fav.svg',
 
   // Set the production url of your site here
-  url: 'https://UiPath.github.io',
+  url: 'https://glowing-adventure-w6n75km.pages.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docusaurus-poc/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
