@@ -17,14 +17,14 @@ const config = {
   favicon: 'img/fav.svg',
 
   // Set the production url of your site here
-  url: 'https://fulgerr.github.io',
+  url: 'https://docusaurus-poc.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/my-website/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Fulgerr', // Usually your GitHub org/user name.
+  organizationName: 'UiPath', // Usually your GitHub org/user name.
   projectName: 'my-website', // Usually your repo name.
 deploymentBranch: 'gh-pages',
   onBrokenLinks: 'throw',
@@ -44,7 +44,7 @@ deploymentBranch: 'gh-pages',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({ docs: { // Keep the original docs configuration
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Fulgerr/my-website/tree/master',
+          editUrl: 'https://github.com/UiPath/docusaurus-poc/tree/master',
                 includeCurrentVersion: false,
                 lastVersion: '2025.10',
                      versions: {
