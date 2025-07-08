@@ -1,0 +1,62 @@
+# Numbered list
+
+1. This is step number one.
+    ![Update screenshot](/static/images/04b9f0b-Screenshot_5=GUID-16202245-6F67-4165-81D9-66AD4ADC6FC3=1=en=Default.png)
+
+2. This is step number two.
+
+    ```plaintext
+    random code inerted here.
+    ```
+
+3. This is step number three.
+
+    Simple paragraph.
+
+4. This is step number four.
+
+    > **Note**  
+    > Insert note here.
+
+5. This is step number five.
+
+    1. substep  
+        1. subsubstep  
+        2. subsubstep  
+            - subsubstep
+    2. substep  
+    3. substep
+6. This is step number six.
+    - ds
+    - ds
+    - ds
+7. Step number seven.
+
+## Unordered list
+
+- fruits:
+  - banana
+  - kiwi
+           - strawberry
+           - cherry
+  - peaches
+  - apricots
+- vegetables:
+        ```pyton
+        print
+        ```
+  - tomato
+  - potato
+      > **Note**
+      Do not delete.
+- avocado
+     ![Chart](/static/images/2c1c599-create_entity=GUID-BB045D8E-E662-4E29-84E5-EEB7047B5E69=1=en=Default.png)
+
+1. Install:
+
+    ```bash
+    npm install
+    ```
+
+2. > **Tip**  
+   > Use version 2.0+
