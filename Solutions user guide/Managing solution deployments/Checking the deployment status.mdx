@@ -1,0 +1,79 @@
+# Checking the deployment status
+
+The **Solutions**  view provides various details on your solution packages, as follows:
+
+
+- 
+  Details on the solutions packages: name, status, latest version, description, author, and publish date.
+- 
+  Details on the deployments: operation, status, start and end time, package name, and package version.
+- 
+  Details on the deployment history of a package: version, operation, status, timestamp, and author.
+
+The following table describes the possible statuses of your deployment:
+
+| Operation | Status | Description |
+| --- | --- | --- |
+| Install | Draft | You saved your solution deployment as a draft and can now resume or discard the installation. |
+| Successful | You installed a solution package. |
+| Failed | The installation failed. You can retry the installation. |
+| FailedRollback | Rollback failed, but some components were already deployed. Make sure to manually clean up any partially installed solution components before trying to deploy the solution again. |
+| In progress | The installation operation is in progress. |
+| Version change | Draft | The upgrade operation was saved as a draft. You can resume or discard the version change. |
+| Successful | The upgrade was successful. |
+| Failed | The upgrade operation failed. You can retry the operation. |
+| FailedRollback | The rollback operation failed. |
+| In progress | The upgrade operation is in progress. |
+| Configuration change | Successful | You successfully edited a solution deployment. |
+| Failed | The configuration change failed. You can retry editing the solution deployment. |
+| FailedRollback | The rollback operation failed. |
+| In progress | The configuration change is in progress. |
+| Uninstall | Successful | You successfully uninstalled a deployment. |
+| Failed | Uninstalling a deployment failed. |
+| In progress | Uninstalling a deployment is in progress. |
+
+The following table describes the deployment operation statuses, and how their current and new versions change:
+
+| Operation and status | Current version | New version |
+| --- | --- | --- |
+| Draft | N/A | The version that is pending installation. |
+| Install successful | Installed version | N/A |
+| Upgrade failed | The version for which you initiate the upgrade. | The version to which you are upgrading.
+
+You can retry deployment, or uninstall the package. |
+| Rollback failed | The version for which the upgrade is intended. | The version for which the rollback is intended.
+
+You can retry deployment. |
+| Rollback successful | The version for which the rollback is performed. | N/A
+
+You can uninstall the package or upgrade to a different version. |
+
+
+
+# Checking the deployment transition status and allowed user operations
+
+# Checking the deployment transition status and allowed user operations
+
+The following table describes the deployment transition status and allowed user operations for each status:
+
+Legend:
+
+![Available](check_24px=GUID-34095475-F0B1-4BFD-B579-00AE1DBC03E6=1=en=Default.svg) - Available
+
+![Not available](error_24px=GUID-73B3D08D-DE2E-4069-A0AE-3F8118EBB84F=1=en=Default.svg) - Not available
+
+| Status | Allowed user operations |
+| --- | --- |
+| Install | Activate | Upgrade | Uninstall | Remove |
+| --- | --- | --- | --- | --- |
+| Draft | Successful | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Install | Successful | ❌ | ✅ | ✅ | ✅ | ❌ |
+| Install | Failed | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Uninstall | Failed | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Upgrade | Failed | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Rollback | Failed | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Active | Successful | ❌ | ❌ | ✅ | ✅ | ❌ |
+| Active | Failed | ❌ | ✅ | ✅ | ✅ | ❌ |
+
+
+

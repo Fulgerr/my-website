@@ -1,0 +1,60 @@
+# Understanding solution concepts
+
+## UiPath Solution
+
+A  solution is a modern enterprise application built on the UiPath platform that includes code, automations, data, APIs, versioning, and configuration.
+
+## UiPath
+
+UiPath  encompasses a set of capabilities around application lifecycle management offered within the UiPath platform. It includes the following:
+
+
+- 
+  creating and configuring solution packages by assembling solution components and defining a default deployment configuration for them;
+- 
+  upgrading solutions;
+- 
+  publishing self-contained, transportable solution packages;
+- 
+  wizard-like experiences for deploying and upgrading solutions;
+- 
+  basic administration options.
+
+## Solution components
+
+Solution components refer to all UiPath platform components that must exist in an environment for the solution to function.
+
+Solution components include processes, assets, queues, storage buckets, triggers, action catalogs, libraries, etc.
+
+## Solution package
+
+A solution package is a self-contained, transportable artifact. It is versioned and includes all the information required to deploy the solution to a different environment:
+
+
+- 
+  artifacts or files;
+- 
+  solution definition (solution folder structure, components included with location and definition) in a declarative model;
+- 
+  solution default deployment configuration (a set of default values for the component properties that accept customization for a certain solution package version).
+
+## Solution project
+
+A solution project is a draft solution. Projects serve as containers for the solution state prior to being published and can be used ongoingly to publish newer solution versions. Projects are bound to your source tenant where you create the solution.
+
+## Solution Builder
+
+The Solution Builder is the UI surface where developers can create and edit solution packages.
+
+## Solution Installer
+
+The Solution Installer is a wizard-like experience that guides you through the steps required to deploy a solution and allows you to define environment-specific configurations.
+
+## Solution deployment
+
+The solution deployment refers to the installation in a certain environment of a solution package version with a specific environment configuration (as permitted when developing the solution project).
+
+## Solution configuration
+
+The solution configuration refers to a set of solution component properties that you can or must customize at deployment time based on the specific requirements of your environment, without affecting the overall solution functionality (e.g., credentials, SLAs, etc.).
+

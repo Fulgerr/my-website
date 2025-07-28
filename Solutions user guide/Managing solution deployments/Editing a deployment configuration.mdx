@@ -1,0 +1,18 @@
+# Editing a deployment configuration
+
+To update the configuration of a deployed solution, use the **Edit deployment configuration**  functionality as described in the following section:
+
+
+1. Select the **Solutions**  tab at tenant level.
+2. In the **Deployments**  tab, identify the deployment you want to edit, select the corresponding three-dot button, then choose **Edit deployment configuration**.
+
+   The **Update configuration**  wizard opens.
+3. In the **Update configuration**  screen, use the Solution explorer to navigate to the components that require configuration changes and edit the properties as needed.
+
+   **Note:** If a property requires changes but is not editable in the current dialog box, this indicates that it was not exposed as configurable in the current solution version. A solution upgrade is required to change this property.
+4. Select **Save and update**  to complete the operation. Note that updating the deployment configuration does not generate a new solution package version.
+
+> **Note:** You can also edit the properties of solution component directly form the component UI. However, this approach is not recommended as it leads to desynchronization within the system.
+
+If you must do this as a hot fix or you accidentally did this, make sure to also apply the desired changes using the flow described on this page to bring the data in sync. Otherwise, the information stored in  will no longer acurately reflect the deployment configuration, and may cause further issues down the line when trying to upgrade the solution.
+
