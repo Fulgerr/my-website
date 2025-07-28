@@ -4,8 +4,7 @@ The **Upgrade / Downgrade**  option allows you to perform the following changes:
 
 
 - Upgrade your solution to a newer version;
-- Downgrade your solution to an older version (similar to a rollback to an older version).
-  Downgrading a solution does not delete entities, choice sets, and webhooks.
+- Downgrade your solution to an older version (similar to a rollback to an older version). Downgrading a solution does not delete entities, choice sets, and webhooks.
 
 To upgrade a solution, take the following steps:
 
@@ -15,8 +14,7 @@ To upgrade a solution, take the following steps:
    **Note:** If a component of the same name already exists in the tenant, your options are the following:
 - Keep the existing component and do not create an additional one.
 - Keep the existing component and add additional new fields from the solution. Note that this option does not alter existing fields.
-- 
-  Rename the conflicting resource in the respective service (for instance, Orchestrator, Action Center) in the target tenant.
+- Rename the conflicting resource in the respective service (for instance, Orchestrator, Action Center) in the target tenant.
 - Rename the resource in the solution deployment if possible.
 2. Select the **Solutions**  tab at tenant level.
 3. In the **Deployments**  tab, select the three-dot menu corresponding to the targeted package, then choose **Upgrade / Downgrade**.
@@ -24,12 +22,13 @@ To upgrade a solution, take the following steps:
 
    The following details are provided on the changes the new version introduces:
 
-   - Newly added components: marked with a plus (+) icon.
-  > **Note:** These components will be created in the target environment after the upgrade, so make sure to review their properties.
-- Removed components: marked with a minus (-) icon.
-  > **Note:** These components will be removed from the target environment after the solution upgrade unless they are referenced by other solutions. In this case, the components will remain within the environment but will be removed from the solution.
-- Edited components: marked with an asterisk (*) icon. The **Compare property differences** panel highlights all the changes to the component properties.
-  > **Note:** Components that only have alterations to their configurable properties are not marked as edited.Edited components retain the existing configurations for their configurable properties by default, but you can switch to using the package configuration. In both cases, if needed, you can update the configurable properties in place.To get an overview of all property changes, check the Compare property differences panel.
+   - Newly added components: marked with a plus (+) icon. > **Note:** These components will be created in the target environment after the upgrade, so make sure to review their properties.
+- Removed components: marked with a minus (-) icon. > **Note:** These components will be removed from the target environment after the solution upgrade unless they are referenced by other solutions. In this case, the components will remain within the environment but will be removed from the solution.
+- Edited components: marked with an asterisk (*) icon. The **Compare property differences** panel highlights all the changes to the component properties. > **Note:** Components that only have alterations to their configurable properties are not marked as edited.
+
+Edited components retain the existing configurations for their configurable properties by default, but you can switch to using the package configuration. In both cases, if needed, you can update the configurable properties in place.
+
+To get an overview of all property changes, check the Compare property differences panel.
 5. Optionally edit any configurable component properties you want.
 6. Save your changes as a draft, validate them, and/or deploy them.
 
