@@ -29,7 +29,9 @@ const config = {
 deploymentBranch: 'gh-pages',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
+  customFields: {
+    aptabaseAppKey: process.env.APTABASE_APP_KEY || 'A-EU-5971610612',
+  },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".

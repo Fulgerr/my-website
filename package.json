@@ -15,6 +15,7 @@
     "docs:version": "docusaurus docs:version"
   },
   "dependencies": {
+    "@aptabase/web": "^0.4.3",
     "@docusaurus/core": "3.7.0",
     "@docusaurus/plugin-content-docs": "^3.7.0",
     "@docusaurus/preset-classic": "3.7.0",
