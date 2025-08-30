@@ -26,11 +26,11 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'UiPath', // Usually your GitHub org/user name.
   projectName: 'docusaurus-poc', // Usually your repo name.
-deploymentBranch: 'gh-pages',
+  deploymentBranch: 'gh-pages',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   customFields: {
-    aptabaseAppKey: process.env.APTABASE_APP_KEY || 'A-EU-5971610612',
+  aptabaseAppKey: process.env.APTABASE_APP_KEY || 'A-EU-5971610612',
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
