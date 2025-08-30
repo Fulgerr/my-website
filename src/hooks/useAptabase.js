@@ -7,7 +7,7 @@ export const useAptabase = () => {
     if (typeof window !== 'undefined') {
       init('YOUR_APTABASE_APP_KEY', {
         // Optional configuration
-        host: 'https://us.aptabase.com', // or your region-specific endpoint
+        host: 'https://eu.aptabase.com', // or your region-specific endpoint
         isDebug: process.env.NODE_ENV !== 'production', // Enable debug logs in development
       });
     }
